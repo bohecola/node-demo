@@ -16,6 +16,14 @@
 // node 的buffer 申请不是通过javascript来实现的，而是C++来实现的
 // slab FreeBSD linux
 
-const buf1 = Buffer.alloc(10, 1);
+// const buf1 = Buffer.alloc(10, 1);
+// const buf3 = Buffer.allocUnsafe(10);
+// const buf4 = Buffer.from([1, 2, 3]); 
+const buf5 = Buffer.alloc(5, 'a');
+// <Buffer 61 61 61 61 61>
 
-console.log(buf1);
+// console.log(buf1);
+// console.log(buf3);
+// console.log(buf4);
+// console.log(Buffer.from('test').length);
+console.log(buf5);
