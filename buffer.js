@@ -19,11 +19,36 @@
 // const buf1 = Buffer.alloc(10, 1);
 // const buf3 = Buffer.allocUnsafe(10);
 // const buf4 = Buffer.from([1, 2, 3]); 
-const buf5 = Buffer.alloc(5, 'a');
+// const buf5 = Buffer.alloc(5, 'a');
 // <Buffer 61 61 61 61 61>
 
 // console.log(buf1);
 // console.log(buf3);
 // console.log(buf4);
 // console.log(Buffer.from('test').length);
-console.log(buf5);
+// console.log(buf5);
+
+// iconv    iconv-lite
+var obj = {
+  '3': 1,
+  '4': 2,
+  length: 5
+}
+
+// const str = 'http://nodejs.cn/';
+// const buf = Buffer.allocUnsafe(str.length);
+
+// for(let i = 0; i < str.length; i++) {
+//   buf[i] = str.charCodeAt(i);
+// }
+
+// console.log(buf.toString('ascii'));
+
+const buf = Buffer.from('http://nodejs.cn/');
+var str = '';
+
+for(let i = 0; i < buf.length; i++) {
+  str += String.fromCodePoint(buf[i]);
+}
+
+console.log(str);
